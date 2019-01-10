@@ -16,8 +16,8 @@ MAIL_LIST=('opensuse-announce' 'opensuse-bugs' 'opensuse-security-announce' 'ope
 # The actual script, 
 # Touch this part with care
 get_mail () {
-    #curl http://$SCRAPYD_SERVER/schedule.json -d project=$PROJECT_NAME -d spider=$SPIDER -d setting=FEED_URI="$DATADIR/$1/$2/$3.json" -d category=$1 -d date="$2-$3"
-    echo $1 $2 $3
+    curl http://$SCRAPYD_SERVER/schedule.json -d project=$PROJECT_NAME -d spider=$SPIDER -d setting=FEED_URI="$DATADIR/$1/$2/$3.json" -d category=$1 -d date="$2-$3"
+    #echo $1 $2 $3
 } 
 
 for i in {1..12}
