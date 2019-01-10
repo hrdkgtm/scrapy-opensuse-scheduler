@@ -63,9 +63,25 @@ The script should not output any data to stdout, but for testing you can uncomme
 
 ```
 get_mail () {
-    curl http://$SCRAPYD_SERVER/schedule.json -d project=$PROJECT_NAME -d spider=$SPIDER -d setting=FEED_URI="$DATADIR/$1/$2/$3.json" -d category=$1 -d date="$2-$3"
-    #echo $1 $2 $3
+    #curl http://$SCRAPYD_SERVER/schedule.json -d project=$PROJECT_NAME -d spider=$SPIDER -d setting=FEED_URI="$DATADIR/$1/$2/$3.json" -d category=$1 -d date="$2-$3"
+    echo $1 $2 $3
 }
+```
+
+That should give you something like
+```
+opensuse-announce 2018 12
+opensuse-announce 2019 01
+opensuse-announce 2019 02
+opensuse-bugs 2018 12
+opensuse-bugs 2019 01
+opensuse-bugs 2019 02
+opensuse-security-announce 2018 12
+opensuse-security-announce 2019 01
+opensuse-security-announce 2019 02
+opensuse-updates 2018 12
+opensuse-updates 2019 01
+opensuse-updates 2019 02
 ```
 
 ## Deployment
