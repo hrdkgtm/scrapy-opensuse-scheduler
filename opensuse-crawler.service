@@ -1,0 +1,12 @@
+[Unit]
+Description=OpenSUSE Mail Spider Scheduler
+After=scrapyd.service
+Wants=scrapyd.service
+
+[Service]
+ExecStart=/root/bin/crawl-current.sh 
+Restart=always
+RestartSec=300
+
+[Install]
+WantedBy=multi-user.target
