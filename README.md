@@ -93,6 +93,45 @@ Deploying to a live system should be as simple as copying the `crawl-year.sh` sc
 - run systemctl `daemon-reload`
 - `systemctl start opensuse-crawler`
 
+This will make your scrapyd server to store those data in `/opt/scrapyd/data/` in a form like this :
+
+```
+opensuse-announce/
+├── 2018
+│   ├── 01.json
+│   ├── 02.json
+│   ├── 03.json
+│   ├── 04.json
+│   ├── 05.json
+│   ├── 06.json
+│   ├── 07.json
+│   ├── 08.json
+│   ├── 09.json
+│   ├── 10.json
+│   ├── 11.json
+│   └── 12.json
+├── 2019
+│   ├── 01.json
+│   └── 02.json
+opensuse-bugs/
+├── 2018
+│   ├── 01.json
+│   ├── 02.json
+│   ├── 03.json
+│   ├── 04.json
+│   ├── 05.json
+│   ├── 06.json
+│   ├── 07.json
+│   ├── 08.json
+│   ├── 09.json
+│   ├── 10.json
+│   ├── 11.json
+│   └── 12.json
+└── 2019
+    ├── 01.json
+    └── 02.json
+```
+
 ## Built With
 
 * Bash
