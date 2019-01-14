@@ -6,9 +6,13 @@ This project contains scripts and unit files necessary for automatically schedul
 
 - crawl-current.sh
 
-    This is the script that will schedule the opensuse mail spider to get any mails from the **current, next, and previous** month. 
+    This is the script that will schedule the opensuse mail spider to get any mails from the **current, next, or previous** month, according to the current date. 
+
+    It will fetch the current and previous month of mails if it is the beginning of the month (1st day only)
+
+    It will fetch the current and next month of mails if it is the enf of the month (greater than 27)
     
-    Why? you might ask. Since the current date is generated from the system, I create the script like this so the spider won't miss any data even if there is a timezone mismatch between your server and the openSUSE page. It also doesn't take too much time or processing power as the spider will immidiately closes if it can't access the page **OR** the page have been parsed.
+    Why? you might ask. Since the current date is generated from the system, I create the script like this so the spider won't miss any data even if there is a timezone mismatch between the server and the openSUSE page. It also doesn't take too much time or processing power as the spider will immidiately closes if it can't access the page **OR** the page have been parsed.
 
 - crawl-year.sh
 
