@@ -35,9 +35,11 @@ fi
 
 #Functions
 get_mail () {
-    #curl http://$SCRAPYD_SERVER/schedule.json -d project=$PROJECT_NAME -d spider=$SPIDER -d setting=FEED_URI="$DATADIR/$1/$2/$3.json" -d category=$1 -d date="$2-$3" > /dev/null
-    echo $1 $2 $3
+    curl http://$SCRAPYD_SERVER/schedule.json -d project=$PROJECT_NAME -d spider=$SPIDER -d setting=FEED_URI="$DATADIR/$1/$2/$1.$2-$3.json" -d category=$1 -d date="$2-$3" > /dev/null
+    #echo $1 $2 $3
 }
+
+#function for current and previous month
 make_request_prev () {
     for MAILNAME in "${MAIL_LIST[@]}"
     do
@@ -46,6 +48,7 @@ make_request_prev () {
     done
 }
 
+#function for current month
 make_request_current () {
     for MAILNAME in "${MAIL_LIST[@]}"
     do
@@ -53,6 +56,7 @@ make_request_current () {
     done
 }
 
+#function for current month and next month
 make_request_next () {
     for MAILNAME in "${MAIL_LIST[@]}"
     do
@@ -64,10 +68,11 @@ make_request_next () {
 # The forever loop until it fails, sleep for 60s
 while true
 do
+    #conditionals for beginning/end of the month
     if [ $THIS_DAY -eq '1' ]
     then
         make_request_prev
-    elif [ $THIS_DAY -gt '27' ]
+    elif [ $THIS_DAY -gt '28' ]
     then
         make_request_next
     else

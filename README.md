@@ -56,7 +56,7 @@ These scripts are designed to be easily modified through variables. And they are
 
 ```
 YEAR='2018'
-SCRAPYD_SERVER='172.168.3.21:6800'
+SCRAPYD_SERVER='localhost:6800'
 DATADIR='/opt/scrapyd/data/'
 PROJECT_NAME='opensuse_mail'
 SPIDER='mail_spider'
@@ -100,40 +100,24 @@ Deploying to a live system should be as simple as copying the `crawl-year.sh` sc
 This will make your scrapyd server to store those data in `/opt/scrapyd/data/` in a form like this :
 
 ```
-opensuse-announce/
-├── 2018
-│   ├── 01.json
-│   ├── 02.json
-│   ├── 03.json
-│   ├── 04.json
-│   ├── 05.json
-│   ├── 06.json
-│   ├── 07.json
-│   ├── 08.json
-│   ├── 09.json
-│   ├── 10.json
-│   ├── 11.json
-│   └── 12.json
-├── 2019
-│   ├── 01.json
-│   └── 02.json
-opensuse-bugs/
-├── 2018
-│   ├── 01.json
-│   ├── 02.json
-│   ├── 03.json
-│   ├── 04.json
-│   ├── 05.json
-│   ├── 06.json
-│   ├── 07.json
-│   ├── 08.json
-│   ├── 09.json
-│   ├── 10.json
-│   ├── 11.json
-│   └── 12.json
-└── 2019
-    ├── 01.json
-    └── 02.json
+...
+├── opensuse-announce
+│   ├── 2018
+│   │   ├── opensuse-announce.2018-01.json
+│   │   ├── opensuse-announce.2018-02.json
+│   │   ├── opensuse-announce.2018-03.json
+│   │   ├── opensuse-announce.2018-04.json
+│   │   ├── opensuse-announce.2018-05.json
+│   │   ├── opensuse-announce.2018-06.json
+│   │   ├── opensuse-announce.2018-07.json
+│   │   ├── opensuse-announce.2018-08.json
+│   │   ├── opensuse-announce.2018-09.json
+│   │   ├── opensuse-announce.2018-10.json
+│   │   ├── opensuse-announce.2018-11.json
+│   │   └── opensuse-announce.2018-12.json
+│   └── 2019
+│       └── opensuse-announce.2019-01.json
+...
 ```
 
 ## Built With
